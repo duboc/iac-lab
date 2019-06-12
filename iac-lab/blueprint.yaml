@@ -16,7 +16,7 @@ resources:
       flavor: Small
       count: 2
       constraints:
-	- tag: '${input.environment}'
+       - tag: '${input.environment}'
       cloudConfig: |
         #cloud-config
         repo_update: true
