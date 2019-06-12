@@ -14,7 +14,7 @@ resources:
     properties:
       image: Ubuntu
       flavor: Small
-      constraints
+      constraints:
        - tag: '${input.environment}'
       cloudConfig: |
         #cloud-config
