@@ -1,11 +1,21 @@
-name: Agnostic-Apache
-version: 1.1
+name: iac-lab
+version: 1.2
+inputs:
+  environment:
+    type: string
+    enum:
+      - 'env:dev'
+      - 'env:test'
+      - 'env:homolog'
+      - 'env:prod'
 resources:
   Cloud_Machine_1:
     type: Cloud.Machine
     properties:
       image: Ubuntu
       flavor: Small
+      constraints:
+	- tag: '${input.environment}'
       cloudConfig: |
         #cloud-config
         repo_update: true
